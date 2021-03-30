@@ -18,3 +18,5 @@ def conv_banch_init(conv, branches):
     nn.init.normal_(weight, 0, math.sqrt(2. / (n * k1 * k2 * branches))) #normal distribution
     nn.init.constant_(conv.bias, 0) #init to a constant
 
+def conv_init(conv):
+    nn.init.kaiming_normal_(conv.weight, mode='fan_out')
